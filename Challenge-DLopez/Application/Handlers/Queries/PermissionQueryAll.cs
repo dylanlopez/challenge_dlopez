@@ -42,10 +42,10 @@ namespace Application.Handlers.Queries
 						Description = String.Format("Se ejecuto el metodo GetPermissions a las {0}", DateTime.Now.ToString())
 					};
 					var newIndex = (_elasticSearchService.Count()) + 1;
-                    _logger.LogInformation("ElasticSearch New Index: newIndex", newIndex);
-                    _elasticSearchService.Call(esRequest, newIndex);
-                    _logger.LogInformation("Save ElasticSearch");
-                }
+					_logger.LogInformation("ElasticSearch New Index: newIndex", newIndex);
+					_elasticSearchService.Call(esRequest, newIndex);
+					_logger.LogInformation("Save ElasticSearch");
+				}
 				_logger.LogInformation("Finalizando GetPermissions");
                 return Task.FromResult(result);
             }
